@@ -1,14 +1,153 @@
 /* base */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;1,900&display=swap');
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     list-style: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:link, :visited {
+    text-decoration: none;
+    color: var(--white);
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary-clr: #f33446;
 }
 
 /* components */
+/* the nav part */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 150px;
+    height: auto;
+}
+
+/* to remove the x and menu icon*/
+nav .fa {
+    display: none;
+    margin: .625em;
+    font-size: 1.375em;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.links li {
+    padding: .5em .75em;
+    display: inline-block;
+    font-size: .8125em;
+}
+
+/* the line under the links */
+.links li::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    margin: auto;
+    background: var(--primary-clr);
+    box-shadow: 0 0 10px var(--primary-clr);
+    transition: .3s;
+}
+
+.links li:hover::after {
+    width: 100%;
+}
+
+/* the text box part */
+.txt-box {
+    width: 100%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.txt-box h1 {
+    font-size: 3.875em;
+}
+
+.txt-box p {
+    font-size: .875em;
+    margin: .625em 0 2.5em;
+    width: 55%;
+}
+
+.hero-btn {
+    display: inline-block;
+    border: 1px solid var(--white);
+    padding: .75em 2.125em;
+    font-size: .8125em;
+    border-radius: 3px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border-color: var(--primary-clr);
+    background: var(--primary-clr);
+}
 
 /* moduls */
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(5, 10, 30, .8), rgba(5, 10, 30, .8)), center/cover url(../images/banner.png);
+    position: relative;
+    padding: 2em 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* media query */
+@media screen and (max-width:767px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: .3125em .625em;
+    }
+
+    .txt-box h1 {
+        font-size: 1.25em;
+    }
+
+    .links {
+        position: absolute;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        width: 200px;
+        height: 100vh;
+        z-index: 5;
+        background: var(--primary-clr);
+        transition: .5s;
+    }
+
+    .links li {
+        display: block;
+    }
+
+    .links ul {
+        padding: 5px 10px;
+    }
+
+    nav .fa {
+        display: block;
+    }
+}

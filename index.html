@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,41 @@
     <!--style-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="assets/images/logo.png" alt="logo" width="272px" height="78px"></a>
+            <div class="links" id="links">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">COURSES</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="txt-box">
+            <h1>Al-Sham Private University</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempora asperiores reiciendis mollitia,
+                dolorum saepe architecto laboriosam veritatis, culpa voluptatum quas eum fuga et voluptates quod quam,
+                quo porro repellat!</p>
+            <a href="#" class="hero-btn">Explore The Colleges</a>
+        </div>
+        <div></div>
+    </header>
+    <script>
+        var links = document.getElementById('links');
+        function showMenu() {
+            links.style.right = "0";
+        }
+        function hideMenu() {
+            links.style.right = "-200px";
+        }
+    </script>
 </body>
+
 </html>
