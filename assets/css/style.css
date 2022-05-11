@@ -1,22 +1,26 @@
 /* base */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;1,900&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     list-style: none;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
 }
 
-:link, :visited {
+:link,
+:visited {
     text-decoration: none;
     color: var(--white);
 }
 
 :root {
     --white: #fff;
+    --off-white: #777;
+    --bg-card: #fff3f3;
     --black: #000;
     --primary-clr: #f33446;
 }
@@ -24,8 +28,14 @@
 /* components */
 /* the nav part */
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -37,16 +47,16 @@ nav img {
 /* to remove the x and menu icon*/
 nav .fa {
     display: none;
-    margin: .625em;
+    margin: 0.625em;
     font-size: 1.375em;
     cursor: pointer;
     color: var(--white);
 }
 
 .links li {
-    padding: .5em .75em;
+    padding: 0.5em 0.75em;
     display: inline-block;
-    font-size: .8125em;
+    font-size: 0.8125em;
 }
 
 /* the line under the links */
@@ -57,8 +67,10 @@ nav .fa {
     height: 2px;
     margin: auto;
     background: var(--primary-clr);
+    -webkit-box-shadow: 0 0 10px var(--primary-clr);
     box-shadow: 0 0 10px var(--primary-clr);
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .links li:hover::after {
@@ -69,10 +81,18 @@ nav .fa {
 .txt-box {
     width: 100%;
     color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -81,18 +101,19 @@ nav .fa {
 }
 
 .txt-box p {
-    font-size: .875em;
-    margin: .625em 0 2.5em;
+    font-size: 0.875em;
+    margin: 0.625em 0 2.5em;
     width: 55%;
 }
 
 .hero-btn {
     display: inline-block;
     border: 1px solid var(--white);
-    padding: .75em 2.125em;
-    font-size: .8125em;
+    padding: 0.75em 2.125em;
+    font-size: 0.8125em;
     border-radius: 3px;
-    transition: .5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
@@ -101,26 +122,138 @@ nav .fa {
     background: var(--primary-clr);
 }
 
+/* the course section */
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+/* the individual card */
+.card {
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+    background: var(--bg-card);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 1.25em 0.75em;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.card:hover {
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* the campus section */
+.campus-card {
+    -ms-flex-preferred-size: 32%;
+    flex-basis: 32%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.875em;
+}
+
+.campus-card img {
+    width: 100%;
+    display: block;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    left: 0;
+}
+
+.layer:hover {
+    background: rgba(226, 0, 0, 0.7);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: var(--white);
+    font-size: 1.625em;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 50%;
+    opacity: 1;
+}
+
 /* moduls */
 header {
-    min-height: 100vh;
-    background: linear-gradient(rgba(5, 10, 30, .8), rgba(5, 10, 30, .8)), center/cover url(../images/banner.png);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 10, 30, 0.8)), to(rgba(5, 10, 30, 0.8))), center/cover url(../images/banner.png);
+    background: linear-gradient(rgba(5, 10, 30, 0.8), rgba(5, 10, 30, 0.8)), center/cover url(../images/banner.png);
     position: relative;
-    padding: 2em 5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     overflow: hidden;
 }
 
+.course,
+.campus,
+header {
+    min-height: 100vh;
+    padding: 2em 5em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.25em;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 0.625em 0;
+}
+
+p {
+    line-height: 1.375em;
+    padding: 0.625em;
+    font-size: 0.875em;
+    font-weight: 300;
+    color: var(--off-white);
+}
+
 /* media query */
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     body {
         font-size: 14px;
     }
 
-    header {
-        padding: .3125em .625em;
+    header,
+    .course,
+    .campus {
+        padding: 0.3125em 0.625em;
     }
 
     .txt-box h1 {
@@ -136,7 +269,8 @@ header {
         height: 100vh;
         z-index: 5;
         background: var(--primary-clr);
-        transition: .5s;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
     }
 
     .links li {
@@ -149,5 +283,12 @@ header {
 
     nav .fa {
         display: block;
+    }
+
+    .row {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 }
