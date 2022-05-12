@@ -22,7 +22,7 @@
     --off-white: #777;
     --bg-card: #fff3f3;
     --black: #000;
-    --primary-clr: #f33446;
+    --primary-clr: #f44336;
 }
 
 /* components */
@@ -138,8 +138,6 @@ nav .fa {
     -ms-flex-preferred-size: 31%;
     flex-basis: 31%;
     background: var(--bg-card);
-    border-radius: 10px;
-    margin-bottom: 5%;
     padding: 1.25em 0.75em;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -154,10 +152,8 @@ nav .fa {
 .campus-card {
     -ms-flex-preferred-size: 32%;
     flex-basis: 32%;
-    border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 1.875em;
 }
 
 .campus-card img {
@@ -199,6 +195,78 @@ nav .fa {
     opacity: 1;
 }
 
+/* facilities section */
+.fac-col {
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+    text-align: left;
+}
+
+.fac-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* testimonials section */
+.testi-col {
+    -ms-flex-preferred-size: 45%;
+    flex-basis: 45%;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: var(--bg-card);
+    padding: 1.5625em;
+}
+
+.testi-col img {
+    height: 40px;
+    margin: 0 30px 0 5px;
+    border-radius: 50%;
+}
+
+.testi-col p {
+    padding: 0;
+}
+
+.testi-col h3 {
+    margin-top: .9375em;
+    text-align: left;
+}
+
+.testi-col .fa-solid {
+    color: var(--primary-clr);
+}
+
+/* contact section */
+.contact {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), center/cover url(../images/banner2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), center/cover url(../images/banner2.jpg);
+    min-height: auto !important;
+    border-radius: 10px;
+    margin: 2em 5em;
+    text-align: center;
+    padding: 100px 0;
+    color: var(--white);
+}
+
+.contact h1 {
+    margin-bottom: 40px;
+}
+
+.testi-col, .fac-col, .campus-card, .card {
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+/* the footer icons */
+.icons .fa-brands {
+    color: var(--primary-clr);
+    margin: 0 .8125em;
+    cursor: pointer;
+    padding: 1.125em 0;
+}
+
 /* moduls */
 header {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 10, 30, 0.8)), to(rgba(5, 10, 30, 0.8))), center/cover url(../images/banner.png);
@@ -215,12 +283,13 @@ header {
     -ms-flex-pack: justify;
     justify-content: space-between;
     overflow: hidden;
+    min-height: 100vh;
 }
 
+.facilities,
 .course,
 .campus,
-header {
-    min-height: 100vh;
+header, .testimonials {
     padding: 2em 5em;
     text-align: center;
 }
@@ -244,6 +313,23 @@ p {
     color: var(--off-white);
 }
 
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 2em 0;
+}
+
+footer h4 {
+    margin-bottom: 1.5em;
+    margin-top: 1.25em;
+    font-weight: 600;
+}
+
+footer p {
+    width: 60%;
+    margin: auto;
+}
+
 /* media query */
 @media screen and (max-width: 767px) {
     body {
@@ -252,8 +338,8 @@ p {
 
     header,
     .course,
-    .campus {
-        padding: 0.3125em 0.625em;
+    .campus, .facilities {
+        padding: 1.3125em 2.625em;
     }
 
     .txt-box h1 {
@@ -261,7 +347,7 @@ p {
     }
 
     .links {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -200px;
         text-align: left;
@@ -291,4 +377,14 @@ p {
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
+    .testi-col img {
+        margin: 0 15px 0 0;
+    }
+
+    .contact h1 {
+        font-size: 1.375em;
+    }
 }
+
+/*# sourceMappingURL=style.css.map */
